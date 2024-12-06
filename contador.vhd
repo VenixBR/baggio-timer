@@ -3,23 +3,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 
 entity contador is
-    Port(
-        clock : in STD_LOGIC;
-        d0 : out STD_LOGIC_VECTOR (6 downto 0) := "0000001";  -- Display
-        selector : out STD_LOGIC_VECTOR(3 downto 0) := "1110";  -- Controla quais displays são ativados
-        botaoA : in STD_LOGIC;  -- Botão A
-        botaoB : in STD_LOGIC;  -- Botão B
-        botaoC : in STD_LOGIC;  -- Botão C
-        botaoD : in STD_LOGIC;  -- Botão D
-        botaoE : in STD_LOGIC;  -- Botão E
-        led : out STD_LOGIC  -- LED de controle
-    );
+	Port(
+  	clock : in STD_LOGIC;
+    d0 : out STD_LOGIC_VECTOR (6 downto 0) := "0000001";  -- Display
+    selector : out STD_LOGIC_VECTOR(3 downto 0) := "1110";  -- Controla quais displays são ativados
+    botaoA : in STD_LOGIC;  -- Botão A
+    botaoB : in STD_LOGIC;  -- Botão B
+    botaoC : in STD_LOGIC;  -- Botão C
+    botaoD : in STD_LOGIC;  -- Botão D
+    botaoE : in STD_LOGIC;  -- Botão E
+    led : out STD_LOGIC  -- LED de controle
+	);
 end contador;
 
 --100Mhz
-
-
-
 
 architecture Behavioral of contador is
 
@@ -32,8 +29,6 @@ architecture Behavioral of contador is
 	signal entrada : integer range 0 to 9 := 0;
 	signal clk100hz : STD_LOGIC := '0';
 	signal cont : integer range 0 to 100e6;
-
-
 
 	component display is
 		Port(
